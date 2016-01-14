@@ -5,6 +5,12 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Impact.ttf">
+            <string>Impact</string>
+            <string>Impact</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -47,17 +53,17 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="skd-Dp-atC">
                                 <rect key="frame" x="-4" y="64" width="328" height="460"/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="khf-Ma-3Qm">
-                                <rect key="frame" x="-4" y="451" width="328" height="48"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="khf-Ma-3Qm" userLabel="bottomTextField">
+                                <rect key="frame" x="-4" y="450" width="328" height="49"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAi-xr-HEq" userLabel="topTextField">
-                                <rect key="frame" x="-4" y="89" width="328" height="48"/>
+                                <rect key="frame" x="-4" y="89" width="328" height="49"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -74,6 +80,8 @@
                             <constraint firstItem="xAi-xr-HEq" firstAttribute="top" secondItem="iFW-5H-qP6" secondAttribute="bottom" constant="25" id="Zck-me-svF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GXp-b0-0h2" secondAttribute="trailing" constant="-20" id="ZyC-OE-cOE"/>
                             <constraint firstItem="GXp-b0-0h2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="f7Z-m4-oWr"/>
+                            <constraint firstItem="khf-Ma-3Qm" firstAttribute="centerX" secondItem="skd-Dp-atC" secondAttribute="centerX" id="fcU-pp-5dC"/>
+                            <constraint firstItem="xAi-xr-HEq" firstAttribute="centerX" secondItem="skd-Dp-atC" secondAttribute="centerX" id="fgc-wI-7sr"/>
                             <constraint firstAttribute="trailingMargin" secondItem="khf-Ma-3Qm" secondAttribute="trailing" constant="-20" id="iqS-lQ-gso"/>
                             <constraint firstItem="xAi-xr-HEq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="kGd-Li-yAr"/>
                             <constraint firstItem="GXp-b0-0h2" firstAttribute="top" secondItem="khf-Ma-3Qm" secondAttribute="bottom" constant="25" id="lBN-d5-3VP"/>
@@ -84,8 +92,10 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="bottomText" destination="khf-Ma-3Qm" id="e2O-R8-WOT"/>
                         <outlet property="cameraButton" destination="Hl5-0p-fV8" id="O0C-vk-sAr"/>
                         <outlet property="imageChoosenView" destination="skd-Dp-atC" id="uet-ji-QyF"/>
+                        <outlet property="topText" destination="xAi-xr-HEq" id="EpF-hR-Feh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
