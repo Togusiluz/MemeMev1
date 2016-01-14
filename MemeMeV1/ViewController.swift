@@ -10,12 +10,10 @@ import UIKit
 
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    @IBOutlet weak var shareButton : UIButton!
-    @IBOutlet weak var cancelButton : UIButton!
     @IBOutlet weak var cameraButton: UIBarButtonItem!
-    @IBOutlet weak var albumButton : UIButton!
     
     @IBOutlet weak var imageChoosenView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

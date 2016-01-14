@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GXp-b0-0h2">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GXp-b0-0h2">
+                                <rect key="frame" x="-4" y="524" width="328" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="w6O-jz-TgB"/>
                                     <barButtonItem systemItem="camera" id="Hl5-0p-fV8">
@@ -35,8 +35,8 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="W69-N3-zbe"/>
                                 </items>
                             </toolbar>
-                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iFW-5H-qP6">
-                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFW-5H-qP6">
+                                <rect key="frame" x="-4" y="20" width="328" height="44"/>
                                 <items>
                                     <navigationItem id="gSp-CC-FrH">
                                         <barButtonItem key="leftBarButtonItem" systemItem="action" id="KBG-Og-QoU"/>
@@ -44,21 +44,39 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="skd-Dp-atC">
-                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="skd-Dp-atC">
+                                <rect key="frame" x="-4" y="64" width="328" height="460"/>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="BOTTOM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="khf-Ma-3Qm">
+                                <rect key="frame" x="-4" y="451" width="328" height="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAi-xr-HEq" userLabel="topTextField">
+                                <rect key="frame" x="-4" y="89" width="328" height="48"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                            </textField>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="skd-Dp-atC" firstAttribute="leading" secondItem="iFW-5H-qP6" secondAttribute="leading" id="3wM-C7-rao"/>
                             <constraint firstItem="iFW-5H-qP6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="6ny-uj-dsO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GXp-b0-0h2" secondAttribute="bottom" id="GSn-au-DxG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xAi-xr-HEq" secondAttribute="trailing" constant="-20" id="HDa-4E-pad"/>
                             <constraint firstItem="GXp-b0-0h2" firstAttribute="top" secondItem="skd-Dp-atC" secondAttribute="bottom" id="KKj-yf-Co7"/>
                             <constraint firstItem="skd-Dp-atC" firstAttribute="top" secondItem="iFW-5H-qP6" secondAttribute="bottom" id="MrV-16-nND"/>
                             <constraint firstItem="iFW-5H-qP6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="OwK-R5-hMg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iFW-5H-qP6" secondAttribute="trailing" constant="-20" id="P6n-C5-GDn"/>
+                            <constraint firstItem="khf-Ma-3Qm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="YUx-fa-T2P"/>
+                            <constraint firstItem="xAi-xr-HEq" firstAttribute="top" secondItem="iFW-5H-qP6" secondAttribute="bottom" constant="25" id="Zck-me-svF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GXp-b0-0h2" secondAttribute="trailing" constant="-20" id="ZyC-OE-cOE"/>
                             <constraint firstItem="GXp-b0-0h2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="f7Z-m4-oWr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="khf-Ma-3Qm" secondAttribute="trailing" constant="-20" id="iqS-lQ-gso"/>
+                            <constraint firstItem="xAi-xr-HEq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="kGd-Li-yAr"/>
+                            <constraint firstItem="GXp-b0-0h2" firstAttribute="top" secondItem="khf-Ma-3Qm" secondAttribute="bottom" constant="25" id="lBN-d5-3VP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="skd-Dp-atC" secondAttribute="trailing" constant="-20" id="lbn-NU-NWZ"/>
                             <constraint firstItem="skd-Dp-atC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="r1x-1x-y56"/>
                             <constraint firstItem="skd-Dp-atC" firstAttribute="trailing" secondItem="GXp-b0-0h2" secondAttribute="trailing" id="vhh-8m-Oi7"/>
