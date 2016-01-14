@@ -23,7 +23,11 @@
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="w6O-jz-TgB"/>
                                     <barButtonItem systemItem="camera" id="Hl5-0p-fV8"/>
-                                    <barButtonItem title="Album" width="70" id="bcJ-NX-CtR"/>
+                                    <barButtonItem title="Album" width="70" id="bcJ-NX-CtR">
+                                        <connections>
+                                            <action selector="PickImage:" destination="BYZ-38-t0r" id="v1N-77-kXV"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="W69-N3-zbe"/>
                                 </items>
                             </toolbar>
@@ -36,21 +40,35 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="skd-Dp-atC">
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="skd-Dp-atC" firstAttribute="leading" secondItem="iFW-5H-qP6" secondAttribute="leading" id="3wM-C7-rao"/>
                             <constraint firstItem="iFW-5H-qP6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="6ny-uj-dsO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GXp-b0-0h2" secondAttribute="bottom" id="GSn-au-DxG"/>
+                            <constraint firstItem="GXp-b0-0h2" firstAttribute="top" secondItem="skd-Dp-atC" secondAttribute="bottom" id="KKj-yf-Co7"/>
+                            <constraint firstItem="skd-Dp-atC" firstAttribute="top" secondItem="iFW-5H-qP6" secondAttribute="bottom" id="MrV-16-nND"/>
                             <constraint firstItem="iFW-5H-qP6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="OwK-R5-hMg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iFW-5H-qP6" secondAttribute="trailing" constant="-20" id="P6n-C5-GDn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GXp-b0-0h2" secondAttribute="trailing" constant="-20" id="ZyC-OE-cOE"/>
                             <constraint firstItem="GXp-b0-0h2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="f7Z-m4-oWr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="skd-Dp-atC" secondAttribute="trailing" constant="-20" id="lbn-NU-NWZ"/>
+                            <constraint firstItem="skd-Dp-atC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="r1x-1x-y56"/>
+                            <constraint firstItem="skd-Dp-atC" firstAttribute="trailing" secondItem="GXp-b0-0h2" secondAttribute="trailing" id="vhh-8m-Oi7"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="cameraButton" destination="Hl5-0p-fV8" id="O0C-vk-sAr"/>
+                        <outlet property="imageChoosenView" destination="skd-Dp-atC" id="uet-ji-QyF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="387"/>
         </scene>
     </scenes>
 </document>

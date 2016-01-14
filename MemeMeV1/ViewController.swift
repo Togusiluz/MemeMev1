@@ -8,11 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var shareButton : UIButton!
+    @IBOutlet weak var cancelButton : UIButton!
+    @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var albumButton : UIButton!
+    
+    @IBOutlet weak var imageChoosenView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,5 +29,23 @@ class ViewController: UIViewController {
     }
 
 
+    @IBAction func PickImage(sender: AnyObject) {
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        self.presentViewController(pickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            self.imageChoosenView.image = image
+        }
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(picker: UIImagePickerController){
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }
 
