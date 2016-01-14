@@ -22,7 +22,11 @@
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="w6O-jz-TgB"/>
-                                    <barButtonItem systemItem="camera" id="Hl5-0p-fV8"/>
+                                    <barButtonItem systemItem="camera" id="Hl5-0p-fV8">
+                                        <connections>
+                                            <action selector="takePhoto:" destination="BYZ-38-t0r" id="7h9-8X-BBb"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem title="Album" width="70" id="bcJ-NX-CtR">
                                         <connections>
                                             <action selector="PickImage:" destination="BYZ-38-t0r" id="v1N-77-kXV"/>
