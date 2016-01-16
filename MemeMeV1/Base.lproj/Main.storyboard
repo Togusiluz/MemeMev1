@@ -99,6 +99,8 @@
                         <outlet property="bottomText" destination="khf-Ma-3Qm" id="e2O-R8-WOT"/>
                         <outlet property="cameraButton" destination="Hl5-0p-fV8" id="O0C-vk-sAr"/>
                         <outlet property="imageChoosenView" destination="skd-Dp-atC" id="uet-ji-QyF"/>
+                        <outlet property="navigationBar" destination="iFW-5H-qP6" id="akh-ji-xxd"/>
+                        <outlet property="toolbar" destination="GXp-b0-0h2" id="lvH-U1-sdp"/>
                         <outlet property="topText" destination="xAi-xr-HEq" id="EpF-hR-Feh"/>
                     </connections>
                 </viewController>

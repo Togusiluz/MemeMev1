@@ -16,6 +16,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var topText: UITextField!
     @IBOutlet weak var bottomText: UITextField!
+    @IBOutlet weak var navigationBar: UINavigationBar!
+    @IBOutlet weak var toolbar: UIToolbar!
 
     
     let memeTextAttributes = [
@@ -52,8 +54,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func shareMeme(sender: AnyObject) {
-        let image = UIImage()
-        let controller = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        let meme = saveMeme()
+        let controller = UIActivityViewController(activityItems: [meme.memedImaged], applicationActivities: nil)
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
@@ -107,6 +109,28 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    
+    func saveMeme()->Meme{
+        return Meme(upText: topText.text!, downText: bottomText.text!, image: imageChoosenView.image!, memedImage: createMemeImage())
+    }
+    
+    func createMemeImage()->UIImage{
+        navigationBar.hidden=true
+        toolbar.hidden=true
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame, afterScreenUpdates: true)
+        let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // TODO:  Show toolbar and navbar
+        navigationBar.hidden=false
+        toolbar.hidden=false
+        
+        return memedImage
+    }
+    
     
 }
 
