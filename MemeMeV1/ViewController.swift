@@ -11,6 +11,8 @@ import UIKit
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var cameraButton: UIBarButtonItem!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     
     @IBOutlet weak var imageChoosenView: UIImageView!
     
@@ -29,22 +31,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
-        topText.defaultTextAttributes = memeTextAttributes
-        bottomText.defaultTextAttributes = memeTextAttributes
-        topText.textAlignment = .Center
-        bottomText.textAlignment = .Center
+        resetTextField(topText)
+        resetTextField(bottomText)
         
         subscribeToKeyboardNotifications()
         
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
+        shareButton.enabled = false
+        cancelButton.enabled = false
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func resetTextField( textField:UITextField!){
+        if let text = textField {
+            text.delegate = self
+            text.defaultTextAttributes = memeTextAttributes
+            text.textAlignment = .Center
+        }
     }
+    
 
     @IBAction func takePhoto(sender: AnyObject) {
         let imagePicker = UIImagePickerController()
@@ -71,13 +76,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             self.imageChoosenView.image = image
         }
+        shareButton.enabled = true
+        cancelButton.enabled = true
         self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController){
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func clearTopText(sender: AnyObject) {
+        topText.text=""
+    }
+    
+    @IBAction func clearBottomText(sender: AnyObject) {
+        bottomText.text=""
+    }
+    
+    @IBAction func checkEmptyTopText(sender: AnyObject) {
+        if let text = topText.text {
+            if text == ""{
+                topText.text="TOP"
+                resetTextField(topText)
+            }
+        }
+    }
+    
+    @IBAction func checkEmptyBottomText(sender: AnyObject) {
+        if let text = bottomText.text {
+            if text == ""{
+                bottomText.text="BOTTOM"
+                resetTextField(bottomText)
+            }
+        }
+    }
     
     func subscribeToKeyboardNotifications() {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
@@ -106,10 +139,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         return keyboardSize.CGRectValue().height
     }
     
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
+    @IBAction func resetMeme(sender: AnyObject) {
+        shareButton.enabled=false;
+        cancelButton.enabled=false;
+        imageChoosenView.image = nil;
+        topText.text="TOP"
+        bottomText.text="BOTTOM"
+    }
     
     func saveMeme()->Meme{
         return Meme(upText: topText.text!, downText: bottomText.text!, image: imageChoosenView.image!, memedImage: createMemeImage())

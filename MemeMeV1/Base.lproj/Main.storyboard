@@ -50,7 +50,11 @@
                                                 <action selector="shareMeme:" destination="BYZ-38-t0r" id="7M7-Cp-WYn"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Vsa-zN-sMK"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Vsa-zN-sMK">
+                                            <connections>
+                                                <action selector="resetMeme:" destination="BYZ-38-t0r" id="4ca-VN-hwG"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -62,12 +66,20 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="checkEmptyBottomText:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="wgA-oI-S5y"/>
+                                    <action selector="clearBottomText:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="Nli-tc-Lhd"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="TOP" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAi-xr-HEq" userLabel="topTextField">
                                 <rect key="frame" x="-4" y="89" width="328" height="49"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="checkEmptyTopText:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="A4x-XU-zg6"/>
+                                    <action selector="clearTopText:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="saZ-Fa-aF8"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -98,8 +110,10 @@
                     <connections>
                         <outlet property="bottomText" destination="khf-Ma-3Qm" id="e2O-R8-WOT"/>
                         <outlet property="cameraButton" destination="Hl5-0p-fV8" id="O0C-vk-sAr"/>
+                        <outlet property="cancelButton" destination="Vsa-zN-sMK" id="amR-5W-iWR"/>
                         <outlet property="imageChoosenView" destination="skd-Dp-atC" id="uet-ji-QyF"/>
                         <outlet property="navigationBar" destination="iFW-5H-qP6" id="akh-ji-xxd"/>
+                        <outlet property="shareButton" destination="KBG-Og-QoU" id="uTe-4t-IUj"/>
                         <outlet property="toolbar" destination="GXp-b0-0h2" id="lvH-U1-sdp"/>
                         <outlet property="topText" destination="xAi-xr-HEq" id="EpF-hR-Feh"/>
                     </connections>
