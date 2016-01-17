@@ -20,22 +20,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomText: UITextField!
     @IBOutlet weak var navigationBar: UINavigationBar!
     @IBOutlet weak var toolbar: UIToolbar!
-
-    
-    struct Meme {
-        var upText : String
-        var downText : String
-        var originalImage : UIImage
-        var memedImaged : UIImage
-        
-        init(upText: String, downText:String,image: UIImage, memedImage: UIImage){
-            self.upText=upText
-            self.downText = downText
-            self.originalImage = image
-            self.memedImaged = memedImage
-        }
-        
-    }
     
     
     let memeTextAttributes = [
@@ -144,14 +128,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func keyboardWillShow(notification: NSNotification) {
         if (bottomText.isFirstResponder()){
-            view.frame.origin.y -= getKeyboardHeight(notification)
+            view.frame.origin.y = -getKeyboardHeight(notification)
         }
     }
     
     func keyboardWillHide(notification: NSNotification) {
-        if (bottomText.isFirstResponder()){
-        view.frame.origin.y += getKeyboardHeight(notification)
-        }
+
+        view.frame.origin.y = 0
+        
     }
     
     func getKeyboardHeight(notification: NSNotification) -> CGFloat {
