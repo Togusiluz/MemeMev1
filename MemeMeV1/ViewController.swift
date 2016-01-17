@@ -60,9 +60,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
 
     @IBAction func shareMeme(sender: AnyObject) {
-        let meme = saveMeme()
-        let controller = UIActivityViewController(activityItems: [meme.memedImaged], applicationActivities: nil)
-        presentViewController(controller, animated: true, completion: nil)
+        let meme = createMemeImage()
+        let controller = UIActivityViewController(activityItems: [meme], applicationActivities: nil)
+        presentViewController(controller, animated: true, completion: saveMeme)
     }
     
     
@@ -161,8 +161,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         bottomText.text="BOTTOM"
     }
     
-    func saveMeme()->Meme{
-        return Meme(upText: topText.text!, downText: bottomText.text!, image: imageChoosenView.image!, memedImage: createMemeImage())
+    func saveMeme(){
+        Meme(upText: topText.text!, downText: bottomText.text!, image: imageChoosenView.image!, memedImage: createMemeImage())
     }
     
     func createMemeImage()->UIImage{
