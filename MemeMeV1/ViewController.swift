@@ -22,12 +22,29 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var toolbar: UIToolbar!
 
     
+    struct Meme {
+        var upText : String
+        var downText : String
+        var originalImage : UIImage
+        var memedImaged : UIImage
+        
+        init(upText: String, downText:String,image: UIImage, memedImage: UIImage){
+            self.upText=upText
+            self.downText = downText
+            self.originalImage = image
+            self.memedImaged = memedImage
+        }
+        
+    }
+    
+    
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName: UIColor.whiteColor() ,
         NSFontAttributeName : UIFont(name: "Impact", size: 40)!,
         NSStrokeWidthAttributeName : -3
     ]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
