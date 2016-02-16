@@ -40,7 +40,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = false
-        cancelButton.enabled = false
+        cancelButton.enabled = true
     }
 
     func resetTextField( textField:UITextField!){
@@ -62,7 +62,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBAction func shareMeme(sender: AnyObject) {
         let meme = createMemeImage()
         let controller = UIActivityViewController(activityItems: [meme], applicationActivities: nil)
-        presentViewController(controller, animated: true, completion: saveMeme)
+        
+        controller.completionWithItemsHandler = {(activityType, completed:Bool, returnedItems, error) in
+            if completed {
+               self.saveMeme()
+            }
+        }
+        
+        presentViewController(controller, animated: true, completion: nil)
     }
     
     
@@ -153,16 +160,30 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         view.endEditing(true)
     }
     
-    @IBAction func resetMeme(sender: AnyObject) {
+    @IBAction func cancelMeme(sender: AnyObject) {
         shareButton.enabled=false;
         cancelButton.enabled=false;
         imageChoosenView.image = nil;
         topText.text="TOP"
         bottomText.text="BOTTOM"
+        
+        let sentMemesView: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SentMemesView") as UIViewController
+        
+     //   self.dismissViewControllerAnimated(false, completion: nil)
+        self.presentViewController(sentMemesView, animated: true, completion: nil)
+        
     }
     
     func saveMeme(){
-        Meme(upText: topText.text!, downText: bottomText.text!, image: imageChoosenView.image!, memedImage: createMemeImage())
+        let meme = Meme(upText: topText.text!, downText: bottomText.text!, image: imageChoosenView.image!, memedImage: createMemeImage())
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
+        
+        let sentMemesView: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SentMemesView") as UIViewController
+        
+        self.dismissViewControllerAnimated(false, completion: nil)
+        self.presentViewController(sentMemesView, animated: true, completion: nil)
     }
     
     func createMemeImage()->UIImage{
