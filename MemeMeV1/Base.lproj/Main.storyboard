@@ -163,7 +163,7 @@
         <!--Sent Memes-->
         <scene sceneID="KwR-Bz-isw">
             <objects>
-                <collectionViewController id="npM-eC-Sk6" sceneMemberID="viewController">
+                <collectionViewController id="npM-eC-Sk6" customClass="SentMemesCollectionViewController" customModule="MemeMeV1" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="AFd-7r-LCS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,7 +223,7 @@
         <!--Sent Memes-->
         <scene sceneID="sfm-Ol-riF">
             <objects>
-                <tableViewController id="Iix-o2-vXZ" sceneMemberID="viewController">
+                <tableViewController id="Iix-o2-vXZ" customClass="SentMemesTableViewController" customModule="MemeMeV1" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xJp-6Q-uy2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

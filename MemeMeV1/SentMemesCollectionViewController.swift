@@ -16,4 +16,11 @@ class SentMemesCollectionViewController: UICollectionViewController {
     }
     
     
+//    UICollectionView
+//    collectionView(_:numberOfItemsInSection:)
+//    collectionView(_:cellForItemAtIndexPath:)
+//    collectionView(_:didSelectItemAtIndexPath:)
+    
+
+    
 }

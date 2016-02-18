@@ -15,5 +15,10 @@ class SentMemesTableViewController: UITableViewController {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
+//    UITableView
+//    tableView(_:numberOfRowsInSection:)
+//    tableView(_:cellForRowAtIndexPath:)
+//    tableView(_:didSelectRowAtIndexPath:)
+    
     
 }
