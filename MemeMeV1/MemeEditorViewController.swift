@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var cameraButton: UIBarButtonItem!
     @IBOutlet weak var shareButton: UIBarButtonItem!
@@ -53,12 +53,20 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
 
     @IBAction func takePhoto(sender: AnyObject) {
+        getImage(UIImagePickerControllerSourceType.Camera)
+    }
+    
+    @IBAction func PickImage(sender: AnyObject) {
+        getImage(UIImagePickerControllerSourceType.PhotoLibrary)
+    }
+    
+    func getImage (sourceType : UIImagePickerControllerSourceType){
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         presentViewController(imagePicker, animated: true, completion: nil)
     }
-
+    
     @IBAction func shareMeme(sender: AnyObject) {
         let meme = createMemeImage()
         let controller = UIActivityViewController(activityItems: [meme], applicationActivities: nil)
@@ -73,16 +81,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     
-    @IBAction func PickImage(sender: AnyObject) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        presentViewController(imagePicker, animated: true, completion: nil)
-    }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageChoosenView.image = image
+            imageChoosenView.contentMode = UIViewContentMode.ScaleAspectFit
         }
         shareButton.enabled = true
         cancelButton.enabled = true
@@ -167,9 +170,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         topText.text="TOP"
         bottomText.text="BOTTOM"
         
-        let sentMemesView: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SentMemesView") as UIViewController
-        
-        self.presentViewController(sentMemesView, animated: true, completion: nil)
+        dismissViewControllerAnimated(false, completion: nil)
         
     }
     
@@ -181,7 +182,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let sentMemesView: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SentMemesView") as UIViewController
         
-        self.presentViewController(sentMemesView, animated: false, completion: nil)
+        presentViewController(sentMemesView, animated: false, completion: nil)
     }
     
     func createMemeImage()->UIImage{
