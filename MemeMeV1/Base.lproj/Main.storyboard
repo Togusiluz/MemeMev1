@@ -123,10 +123,10 @@
             </objects>
             <point key="canvasLocation" x="1556" y="344"/>
         </scene>
-        <!--Meme Detail View Controller-->
+        <!--Meme Detail-->
         <scene sceneID="3rP-eP-7Iq">
             <objects>
-                <viewController storyboardIdentifier="MemeDetailViewController" id="cPD-dG-eT3" customClass="MemeDetailViewController" customModule="MemeMeV1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeDetailViewController" title="Meme Detail" id="cPD-dG-eT3" customClass="MemeDetailViewController" customModule="MemeMeV1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LSq-yv-cje"/>
                         <viewControllerLayoutGuide type="bottom" id="F8u-gl-po1"/>

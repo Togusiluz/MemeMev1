@@ -182,8 +182,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let sentMemesView: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SentMemesView") as UIViewController
         
-        self.dismissViewControllerAnimated(false, completion: nil)
-        self.presentViewController(sentMemesView, animated: true, completion: nil)
+       // self.dismissViewControllerAnimated(false, completion: nil)
+        self.presentViewController(sentMemesView, animated: false, completion: nil)
     }
     
     func createMemeImage()->UIImage{
