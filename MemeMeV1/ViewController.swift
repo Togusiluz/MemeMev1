@@ -169,7 +169,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let sentMemesView: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SentMemesView") as UIViewController
         
-     //   self.dismissViewControllerAnimated(false, completion: nil)
         self.presentViewController(sentMemesView, animated: true, completion: nil)
         
     }
@@ -182,7 +181,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         let sentMemesView: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SentMemesView") as UIViewController
         
-       // self.dismissViewControllerAnimated(false, completion: nil)
         self.presentViewController(sentMemesView, animated: false, completion: nil)
     }
     
@@ -195,7 +193,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         let memedImage : UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        // TODO:  Show toolbar and navbar
         navigationBar.hidden=false
         toolbar.hidden=false
         
