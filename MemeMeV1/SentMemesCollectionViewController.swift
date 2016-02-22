@@ -32,7 +32,6 @@ class SentMemesCollectionViewController: UICollectionViewController {
     
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(memes.count)
         return memes.count
     }
     
