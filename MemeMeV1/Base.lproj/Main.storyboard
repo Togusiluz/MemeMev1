@@ -86,15 +86,15 @@
                         <constraints>
                             <constraint firstItem="skd-Dp-atC" firstAttribute="leading" secondItem="iFW-5H-qP6" secondAttribute="leading" id="3wM-C7-rao"/>
                             <constraint firstItem="iFW-5H-qP6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="6ny-uj-dsO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GXp-b0-0h2" secondAttribute="bottom" id="GSn-au-DxG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GXp-b0-0h2" secondAttribute="bottom" id="9Kj-UA-7CA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xAi-xr-HEq" secondAttribute="trailing" constant="-20" id="HDa-4E-pad"/>
                             <constraint firstItem="GXp-b0-0h2" firstAttribute="top" secondItem="skd-Dp-atC" secondAttribute="bottom" id="KKj-yf-Co7"/>
                             <constraint firstItem="skd-Dp-atC" firstAttribute="top" secondItem="iFW-5H-qP6" secondAttribute="bottom" id="MrV-16-nND"/>
-                            <constraint firstItem="iFW-5H-qP6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="OwK-R5-hMg"/>
                             <constraint firstAttribute="trailingMargin" secondItem="iFW-5H-qP6" secondAttribute="trailing" constant="-20" id="P6n-C5-GDn"/>
                             <constraint firstItem="khf-Ma-3Qm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="YUx-fa-T2P"/>
                             <constraint firstItem="xAi-xr-HEq" firstAttribute="top" secondItem="iFW-5H-qP6" secondAttribute="bottom" constant="25" id="Zck-me-svF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GXp-b0-0h2" secondAttribute="trailing" constant="-20" id="ZyC-OE-cOE"/>
+                            <constraint firstItem="iFW-5H-qP6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aPP-TD-j6P"/>
                             <constraint firstItem="GXp-b0-0h2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="f7Z-m4-oWr"/>
                             <constraint firstItem="khf-Ma-3Qm" firstAttribute="centerX" secondItem="skd-Dp-atC" secondAttribute="centerX" id="fcU-pp-5dC"/>
                             <constraint firstItem="xAi-xr-HEq" firstAttribute="centerX" secondItem="skd-Dp-atC" secondAttribute="centerX" id="fgc-wI-7sr"/>
@@ -122,6 +122,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1556" y="344"/>
+        </scene>
+        <!--Meme Detail View Controller-->
+        <scene sceneID="3rP-eP-7Iq">
+            <objects>
+                <viewController storyboardIdentifier="MemeDetailViewController" id="cPD-dG-eT3" customClass="MemeDetailViewController" customModule="MemeMeV1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LSq-yv-cje"/>
+                        <viewControllerLayoutGuide type="bottom" id="F8u-gl-po1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Hcw-JH-6Jx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u63-1F-9F6">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="imageMeme" destination="u63-1F-9F6" id="8gg-aB-Cb3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M2W-Ts-tAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562" y="1104"/>
         </scene>
         <!--SentMemesView-->
         <scene sceneID="naV-kk-HoX">
