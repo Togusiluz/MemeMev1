@@ -22,12 +22,13 @@ class SentMemesTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    
         let cell = tableView.dequeueReusableCellWithIdentifier(REUSABLE_CELL, forIndexPath: indexPath) as UITableViewCell
         let meme = memes[indexPath.item]
+        
         cell.imageView?.image = meme.memedImaged
         cell.imageView?.contentMode = UIViewContentMode.ScaleAspectFill
         cell.textLabel?.text = meme.upText + " " + meme.downText
+        
         return cell;
     }
     
@@ -36,14 +37,6 @@ class SentMemesTableViewController: UITableViewController {
         memeDetailController.meme = self.memes[indexPath.row]
         self.navigationController!.pushViewController(memeDetailController, animated: true)
     }
-    
-
-
-    
-//    UITableView
-//    tableView(_:numberOfRowsInSection:)
-//    tableView(_:cellForRowAtIndexPath:)
-//    tableView(_:didSelectRowAtIndexPath:)
     
     
 }

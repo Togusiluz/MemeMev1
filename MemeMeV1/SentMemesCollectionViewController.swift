@@ -40,6 +40,7 @@ class SentMemesCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(REUSABLE_CELL_ID, forIndexPath: indexPath) as! CustomMemeCell
         let meme = memes[indexPath.item]
         let imageView = UIImageView(image: meme.memedImaged)
+        imageView.contentMode = UIViewContentMode.ScaleAspectFill
         cell.backgroundView = imageView
         
         return cell
