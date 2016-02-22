@@ -17,6 +17,8 @@ class SentMemesTableViewController: UITableViewController {
         return (UIApplication.sharedApplication().delegate as! AppDelegate).memes
     }
     
+
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return memes.count
     }
@@ -35,8 +37,14 @@ class SentMemesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let memeDetailController = self.storyboard!.instantiateViewControllerWithIdentifier("MemeDetailViewController") as! MemeDetailViewController
         memeDetailController.meme = self.memes[indexPath.row]
-        self.navigationController!.pushViewController(memeDetailController, animated: true)
+        navigationController!.pushViewController(memeDetailController, animated: true)
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            (UIApplication.sharedApplication().delegate as! AppDelegate).memes.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
     
 }

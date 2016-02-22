@@ -20,7 +20,15 @@ class SentMemesCollectionViewController: UICollectionViewController {
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView?.reloadData()
+        
+    }
+    
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         let space : CGFloat = 3.0
         let dimension = (self.view.frame.size.width - (2*space)) / 3.0
 
@@ -52,12 +60,5 @@ class SentMemesCollectionViewController: UICollectionViewController {
         self.navigationController!.pushViewController(memeDetailController, animated: true)
     }
     
-    
-//    UICollectionView
-//    collectionView(_:numberOfItemsInSection:)
-//    collectionView(_:cellForItemAtIndexPath:)
-//    collectionView(_:didSelectItemAtIndexPath:)
-    
-
-    
+        
 }
