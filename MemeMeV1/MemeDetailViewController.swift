@@ -27,9 +27,9 @@ class MemeDetailViewController: UIViewController {
     }
     
     func editMeme(){
-        print("Button Pressed")
         let editMemeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
-        
+        editMemeViewController.editedMeme = meme
+        editMemeViewController.editedIndex = memeIndex
         presentViewController(editMemeViewController, animated: true, completion: nil)
     }
     

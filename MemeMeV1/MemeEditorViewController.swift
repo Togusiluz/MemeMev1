@@ -22,6 +22,9 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
     @IBOutlet weak var toolbar: UIToolbar!
     
     
+    var editedIndex:Int = -1
+    var editedMeme : Meme!
+    
     let memeTextAttributes = [
         NSStrokeColorAttributeName : UIColor.blackColor(),
         NSForegroundColorAttributeName: UIColor.whiteColor() ,
@@ -29,18 +32,21 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         NSStrokeWidthAttributeName : -3
     ]
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         resetTextField(topText)
         resetTextField(bottomText)
+        loadEditedMeme()
         
         subscribeToKeyboardNotifications()
         
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
         shareButton.enabled = false
         cancelButton.enabled = true
+        
+        
+        
     }
 
     func resetTextField( textField:UITextField!){
@@ -48,6 +54,16 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
             text.delegate = self
             text.defaultTextAttributes = memeTextAttributes
             text.textAlignment = .Center
+        }
+    }
+    
+    
+    func loadEditedMeme(){
+        if let editedMeme=editedMeme{
+            topText.text = editedMeme.upText
+            bottomText.text = editedMeme.downText
+            imageChoosenView.image = editedMeme.originalImage
+            imageChoosenView.contentMode = UIViewContentMode.ScaleAspectFit
         }
     }
     
@@ -178,10 +194,14 @@ class MemeEditorViewController: UIViewController, UIImagePickerControllerDelegat
         let meme = Meme(upText: topText.text!, downText: bottomText.text!, originalImage: imageChoosenView.image!, memedImaged: createMemeImage())
         let object = UIApplication.sharedApplication().delegate
         let appDelegate = object as! AppDelegate
-        appDelegate.memes.append(meme)
+
+        if (editedIndex>=0) {
+            appDelegate.memes[editedIndex] = meme
+        }else{
+            appDelegate.memes.append(meme)
+        }
         
         let sentMemesView: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("SentMemesView") as UIViewController
-        
         presentViewController(sentMemesView, animated: false, completion: nil)
     }
     

@@ -84,26 +84,22 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="skd-Dp-atC" firstAttribute="leading" secondItem="iFW-5H-qP6" secondAttribute="leading" id="3wM-C7-rao"/>
-                            <constraint firstItem="iFW-5H-qP6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="6ny-uj-dsO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GXp-b0-0h2" secondAttribute="bottom" id="9Kj-UA-7CA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="xAi-xr-HEq" secondAttribute="trailing" constant="-20" id="HDa-4E-pad"/>
-                            <constraint firstItem="GXp-b0-0h2" firstAttribute="top" secondItem="skd-Dp-atC" secondAttribute="bottom" id="KKj-yf-Co7"/>
-                            <constraint firstItem="skd-Dp-atC" firstAttribute="top" secondItem="iFW-5H-qP6" secondAttribute="bottom" id="MrV-16-nND"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="iFW-5H-qP6" secondAttribute="trailing" constant="-20" id="P6n-C5-GDn"/>
-                            <constraint firstItem="khf-Ma-3Qm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="YUx-fa-T2P"/>
-                            <constraint firstItem="xAi-xr-HEq" firstAttribute="top" secondItem="iFW-5H-qP6" secondAttribute="bottom" constant="25" id="Zck-me-svF"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="GXp-b0-0h2" secondAttribute="trailing" constant="-20" id="ZyC-OE-cOE"/>
-                            <constraint firstItem="iFW-5H-qP6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="aPP-TD-j6P"/>
-                            <constraint firstItem="GXp-b0-0h2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="f7Z-m4-oWr"/>
-                            <constraint firstItem="khf-Ma-3Qm" firstAttribute="centerX" secondItem="skd-Dp-atC" secondAttribute="centerX" id="fcU-pp-5dC"/>
-                            <constraint firstItem="xAi-xr-HEq" firstAttribute="centerX" secondItem="skd-Dp-atC" secondAttribute="centerX" id="fgc-wI-7sr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="khf-Ma-3Qm" secondAttribute="trailing" constant="-20" id="iqS-lQ-gso"/>
-                            <constraint firstItem="xAi-xr-HEq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="kGd-Li-yAr"/>
-                            <constraint firstItem="GXp-b0-0h2" firstAttribute="top" secondItem="khf-Ma-3Qm" secondAttribute="bottom" constant="25" id="lBN-d5-3VP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="skd-Dp-atC" secondAttribute="trailing" constant="-20" id="lbn-NU-NWZ"/>
-                            <constraint firstItem="skd-Dp-atC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="r1x-1x-y56"/>
-                            <constraint firstItem="skd-Dp-atC" firstAttribute="trailing" secondItem="GXp-b0-0h2" secondAttribute="trailing" id="vhh-8m-Oi7"/>
+                            <constraint firstItem="skd-Dp-atC" firstAttribute="top" secondItem="iFW-5H-qP6" secondAttribute="bottom" id="5cJ-xW-TbH"/>
+                            <constraint firstItem="khf-Ma-3Qm" firstAttribute="leading" secondItem="skd-Dp-atC" secondAttribute="leading" id="7Qx-6P-UTo"/>
+                            <constraint firstItem="iFW-5H-qP6" firstAttribute="leading" secondItem="xAi-xr-HEq" secondAttribute="leading" id="CwE-8m-Fkn"/>
+                            <constraint firstItem="xAi-xr-HEq" firstAttribute="leading" secondItem="khf-Ma-3Qm" secondAttribute="leading" id="HdU-bI-IbD"/>
+                            <constraint firstItem="xAi-xr-HEq" firstAttribute="trailing" secondItem="iFW-5H-qP6" secondAttribute="trailing" id="Kdk-Nq-dRw"/>
+                            <constraint firstItem="iFW-5H-qP6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NaF-6b-kXY"/>
+                            <constraint firstItem="GXp-b0-0h2" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="OVN-J1-5nO"/>
+                            <constraint firstItem="iFW-5H-qP6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="PMq-mg-DQg"/>
+                            <constraint firstItem="GXp-b0-0h2" firstAttribute="top" secondItem="skd-Dp-atC" secondAttribute="bottom" id="PpU-Hk-F1I"/>
+                            <constraint firstItem="khf-Ma-3Qm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UlM-VX-jFG"/>
+                            <constraint firstItem="khf-Ma-3Qm" firstAttribute="trailing" secondItem="xAi-xr-HEq" secondAttribute="trailing" id="X6e-FX-7iA"/>
+                            <constraint firstItem="khf-Ma-3Qm" firstAttribute="trailing" secondItem="GXp-b0-0h2" secondAttribute="trailing" id="cTT-b4-yXY"/>
+                            <constraint firstItem="xAi-xr-HEq" firstAttribute="top" secondItem="iFW-5H-qP6" secondAttribute="bottom" constant="25" id="nPG-OM-klS"/>
+                            <constraint firstItem="khf-Ma-3Qm" firstAttribute="trailing" secondItem="skd-Dp-atC" secondAttribute="trailing" id="qOU-cl-ArO"/>
+                            <constraint firstItem="GXp-b0-0h2" firstAttribute="top" secondItem="khf-Ma-3Qm" secondAttribute="bottom" constant="25" id="tOr-BC-yNu"/>
+                            <constraint firstItem="khf-Ma-3Qm" firstAttribute="leading" secondItem="GXp-b0-0h2" secondAttribute="leading" id="yzX-yc-iJ5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JkQ-bw-pxN"/>
@@ -126,7 +122,6 @@
         <!--Meme Detail-->
         <scene sceneID="3rP-eP-7Iq">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M2W-Ts-tAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="MemeDetailViewController" title="Meme Detail" id="cPD-dG-eT3" customClass="MemeDetailViewController" customModule="MemeMeV1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LSq-yv-cje"/>
@@ -153,6 +148,7 @@
                         <outlet property="imageMeme" destination="u63-1F-9F6" id="8gg-aB-Cb3"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M2W-Ts-tAk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562" y="1104"/>
         </scene>
@@ -209,7 +205,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="MemeCollectionCell" id="n7l-DT-RzV" customClass="CustomMemeCell" customModule="MemeMeV1" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="MemeCollectionCell" id="n7l-DT-RzV">
                                 <rect key="frame" x="0.0" y="64" width="121" height="125"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
