@@ -14,12 +14,24 @@ class MemeDetailViewController: UIViewController {
     
     
     var meme : Meme!
+    var memeIndex : Int = -1
     
     @IBOutlet weak var imageMeme: UIImageView!
     
     override func viewWillAppear(animated: Bool) {
         imageMeme.image = meme.memedImaged
         imageMeme.contentMode = UIViewContentMode.ScaleAspectFit
+    
+    
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "editMeme")
     }
+    
+    func editMeme(){
+        print("Button Pressed")
+        let editMemeViewController = self.storyboard?.instantiateViewControllerWithIdentifier("MemeEditorViewController") as! MemeEditorViewController
+        
+        presentViewController(editMemeViewController, animated: true, completion: nil)
+    }
+    
     
 }
